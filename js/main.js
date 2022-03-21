@@ -9,10 +9,6 @@ function getRandomInt (min, max) {
   return 0;
 }
 
-function checkLengthString (string, maxLength) {
-  return string.length <= maxLength;
-}
-
 const NAMES = [
   'Вашингтон',
   'Адамс',
@@ -49,7 +45,7 @@ function createPhoto (value, index) {
   };
 }
 
-let usedCommentsId = [];
+const usedCommentsId = [];
 
 function createComment () {
   return {
@@ -79,5 +75,3 @@ function getNonRepeatingElement (store) {
 function getRandomArrayElements (elements) {
   return elements[getRandomInt(0, elements.length - 1)];
 }
-
-console.log(similarPhoto);
