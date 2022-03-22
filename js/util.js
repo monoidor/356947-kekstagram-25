@@ -9,20 +9,24 @@ function getRandomInt (min, max) {
   return 0;
 }
 
-function getNonRepeatingElement (store) {
-  let i = 0;
-  let id;
+function getNonRepeatingElement (min, max) {
+  const store = [];
 
-  while (i < 1) {
-    id = getRandomInt(1, 1000);
+  return function () {
+    let currentValue = getRandomInt(min, max);
 
-    if (store.indexOf(id) === -1) {
-      store.push(id);
-      i++;
+    if (store.length >= (max - min + 1)) {
+      return null;
     }
-  }
 
-  return id;
+    while (store.includes(currentValue)) {
+      currentValue = getRandomInt(min, max);
+    }
+
+    store.push(currentValue);
+
+    return currentValue;
+  };
 }
 
 function getRandomArrayElement (elements) {

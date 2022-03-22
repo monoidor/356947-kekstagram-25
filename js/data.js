@@ -22,7 +22,7 @@ const COMMENTS = [
 
 const SIMILAR_PHOTO_COUNT = 25;
 
-const usedCommentsId = [];
+const generateCommentId = getNonRepeatingElement(1, 1000);
 
 const similarPhoto = () => Array.from({length: SIMILAR_PHOTO_COUNT}, createPhoto);
 
@@ -40,7 +40,7 @@ function createPhoto (value, index) {
 
 function createComment () {
   return {
-    id: getNonRepeatingElement(usedCommentsId),
+    id: generateCommentId(),
     avatar: `img/avatar-${getRandomInt(1, 6)}.svg`,
     message: Array.from({length: getRandomInt(1, 2)}, () => getRandomArrayElement(COMMENTS)).join(' '),
     name: getRandomArrayElement(NAMES)
