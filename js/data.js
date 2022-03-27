@@ -24,7 +24,7 @@ const SIMILAR_PHOTO_COUNT = 25;
 
 const generateCommentId = getNonRepeatingElement(1, 1000);
 
-const similarPhoto = () => Array.from({length: SIMILAR_PHOTO_COUNT}, createPhoto);
+const createSimilarPhoto = () => Array.from({length: SIMILAR_PHOTO_COUNT}, createPhoto);
 
 function createPhoto (value, index) {
   const id = index + 1;
@@ -47,4 +47,4 @@ function createComment () {
   };
 }
 
-export {similarPhoto};
+export {createSimilarPhoto};
