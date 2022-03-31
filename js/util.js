@@ -1,9 +1,9 @@
 function getRandomInt (min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  const roundedMin = Math.ceil(min);
+  const roundedMax = Math.floor(max);
 
-  if(max > min && min >= 0) {
-    return Math.floor(min + Math.random() * (max - min + 1));
+  if(roundedMax > roundedMin && roundedMin >= 0) {
+    return Math.floor(roundedMin + Math.random() * (roundedMax - roundedMin + 1));
   }
 
   return 0;

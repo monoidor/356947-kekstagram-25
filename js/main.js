@@ -1,1 +1,1 @@
-import {similarPhoto} from './data.js';
+import './thumbnail.js';
