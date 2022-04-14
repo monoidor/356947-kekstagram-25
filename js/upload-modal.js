@@ -1,4 +1,5 @@
 import {isEscapeKey} from './util.js';
+import {resetScale} from './image-scale.js';
 
 const uploadModalElement = document.querySelector('.img-upload__overlay');
 const uploadModalCloseElement = uploadModalElement.querySelector('#upload-cancel');
@@ -28,6 +29,8 @@ function openUploadModal () {
 function closeUploadModal () {
   uploadModalElement.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
+
+  resetScale();
 
   document.removeEventListener('keydown', onUploadModalEscKeydown);
   uploadModalCloseElement.removeEventListener('click', onUploadModalCloseClick);
