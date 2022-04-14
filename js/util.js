@@ -33,4 +33,8 @@ function getRandomArrayElement (elements) {
   return elements[getRandomInt(0, elements.length - 1)];
 }
 
-export {getRandomInt, getNonRepeatingElement, getRandomArrayElement};
+function isEscapeKey (evt) {
+  return evt.key === 'Escape';
+}
+
+export {getRandomInt, getNonRepeatingElement, getRandomArrayElement, isEscapeKey};
