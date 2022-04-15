@@ -116,10 +116,10 @@ function setSliderContainerDisplay (value) {
 
 function resetEffect () {
   setEffect('');
+  setSliderContainerDisplay('none');
 
   pictureElement.style.filter = '';
   pictureElement.classList = '';
-  setSliderContainerDisplay('none');
 }
 
 export {resetEffect};
