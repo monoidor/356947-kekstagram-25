@@ -42,7 +42,7 @@ function validateHashtags (value) {
     return false;
   }
 
-  if (hashtags.some((item, num, arr) => arr.includes(item, num + 1))) {
+  if (hashtags.some((element, index, array) => array.includes(element, index + 1))) {
     errorMessage = 'Хэш-теги не должны повторться';
 
     return false;
