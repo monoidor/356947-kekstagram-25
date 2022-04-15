@@ -10,7 +10,7 @@ const pictureElement = document.querySelector('.img-upload__preview img');
 const getScaleValue = () => parseFloat(scaleValueElement.value);
 
 function setScaleImage (value) {
-  pictureElement.style.transform = `scale(${value / 100})`;
+  pictureElement.style.transform = value > 0 ? `scale(${value / 100})` : '';
 }
 
 function setScale (value) {
@@ -38,7 +38,8 @@ scaleSmallerElement.addEventListener('click', onScaleSmallerClick);
 scaleBiggerElement.addEventListener('click', onScaleBiggerClick);
 
 function resetScale () {
-
+  scaleValueElement.value = `${MAX_SCALE}%`;
+  setScaleImage(0);
 }
 
 export {resetScale};
