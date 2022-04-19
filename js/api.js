@@ -9,6 +9,27 @@ const getData = (onSuccess, onFail) => {
     });
 };
 
+const sendData = (onSuccess, onFail, body) => {
+  fetch(
+    'https://25.javascript.pages.academy/kekstagram',
+    {
+      method: 'POST',
+      body,
+    },
+  )
+    .then((response) => {
+      if (response.ok) {
+        onSuccess();
+      } else {
+        console.log(response);
+        onFail('Не удалось загрузить фотографию. Обновите страницу или попробуйте позже');
+      }
+    })
+    .catch(() => {
+      onFail('Не удалось загрузить фотографию. Обновите страницу или попробуйте позже');
+    });
+};
+
 const showAlert = (message) => {
   const alertElement = document.createElement('div');
 
@@ -18,4 +39,4 @@ const showAlert = (message) => {
   document.body.append(alertElement);
 };
 
-export {getData, showAlert};
+export {getData, sendData, showAlert};

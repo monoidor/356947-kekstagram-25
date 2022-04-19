@@ -47,6 +47,8 @@ function validateHashtags (value) {
 
     return false;
   }
+
+  return true;
 }
 
 function validateDescription (value) {
@@ -58,7 +60,7 @@ pristine.addValidator(form.querySelector('input[name="hashtags"]'), validateHash
 pristine.addValidator(form.querySelector('input[name="description"]'), validateDescription,  `До ${MAX_DESCRIPTION_LENGTH} символов`);
 
 function validateForm () {
-  pristine.validate();
+  return pristine.validate();
 }
 
 export {validateForm};
