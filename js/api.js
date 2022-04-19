@@ -21,7 +21,6 @@ const sendData = (onSuccess, onFail, body) => {
       if (response.ok) {
         onSuccess();
       } else {
-        console.log(response);
         onFail('Не удалось загрузить фотографию. Обновите страницу или попробуйте позже');
       }
     })
