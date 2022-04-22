@@ -1216,7 +1216,7 @@ main {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
 
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -1415,4 +1415,16 @@ main {
 
 .hidden {
   display: none;
+}
+
+.error-alert {
+  z-index: 100;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  padding: 10px 3px;
+  font-size: 24px;
+  text-align: center;
+  background-color: red;
 }
