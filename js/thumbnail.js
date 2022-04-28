@@ -1,11 +1,18 @@
-import {getData, showAlert} from './api.js';
-
 const pictureListElement = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
+
+const removePhotos = () => {
+  const photoElements = document.querySelectorAll('.picture');
+  if (photoElements) {
+    photoElements.forEach((photo) => photo.remove());
+  }
+};
 
 const pictureFragment = document.createDocumentFragment();
 
 const renderPhotos = (photos) => {
+  removePhotos();
+
   photos.forEach((photo) => {
     const photoElement = pictureTemplate.cloneNode(true);
 
@@ -19,11 +26,4 @@ const renderPhotos = (photos) => {
   pictureListElement.appendChild(pictureFragment);
 };
 
-getData(
-  (photos) => {
-    renderPhotos(photos);
-  },
-  (message) => {
-    showAlert(message);
-  }
-);
+export {renderPhotos};

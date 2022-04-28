@@ -4,7 +4,7 @@ const pictureElement = document.querySelector('.img-upload__preview img');
 const effectsListElement = document.querySelector('.effects__list');
 const effectValueElement = document.querySelector('.effect-level__value');
 
-const EFFECT_SETTINGS = {
+const effectSettings = {
   'chrome': {
     range: {
       min: 0,
@@ -95,7 +95,7 @@ effectsListElement.addEventListener('change', (evt) => {
     if (effect === 'none') {
       resetEffect();
     } else {
-      updateSliderOptions(EFFECT_SETTINGS[effect]);
+      updateSliderOptions(effectSettings[effect]);
       updateSliderEffects(effect);
     }
   }
@@ -106,7 +106,7 @@ function setEffect (value) {
 }
 
 function setPictureEffect (effect, value) {
-  pictureElement.style.filter = `${EFFECT_SETTINGS[effect].filterName}(${value}${EFFECT_SETTINGS[effect].unit})`;
+  pictureElement.style.filter = `${effectSettings[effect].filterName}(${value}${effectSettings[effect].unit})`;
   pictureElement.classList.add(`effects__preview--${effect}`);
 }
 
