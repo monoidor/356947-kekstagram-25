@@ -34,7 +34,7 @@ const createNotice = (type) => {
 };
 
 const showNotice = (type) => {
-  document.querySelector('body').appendChild(createNotice(type));
+  document.body.appendChild(createNotice(type));
 
   openNoticeType = type;
 };
