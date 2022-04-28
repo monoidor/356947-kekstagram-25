@@ -37,6 +37,14 @@ function isEscapeKey (evt) {
   return evt.key === 'Escape';
 }
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 // Функция взята из интернета и доработана
 // Источник - https://www.freecodecamp.org/news/javascript-debounce-example
 
@@ -82,4 +90,4 @@ function throttle (callback, delayBetweenFrames) {
   };
 }
 
-export {getRandomInt, getNonRepeatingElement, getRandomArrayElement, isEscapeKey, debounce, throttle};
+export {getRandomInt, getNonRepeatingElement, getRandomArrayElement, isEscapeKey, shuffleArray, debounce, throttle};
